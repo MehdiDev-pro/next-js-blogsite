@@ -1,6 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
 import { revalidatePath } from "next/cache";
 
+
+// used this line to fix the error of revalidatePath() not working
+export const revalidate = true
+
 export async function GET(request: NextRequest) {
   const secret = request.nextUrl.searchParams.get("secret");
 
